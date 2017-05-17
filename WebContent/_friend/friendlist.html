@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+   table {
+     
+      border-collapse: collapse;
+    width: 100%;
+   }
+   
+ th, td {
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even){background-color: #AEB6BF}
+th {
+    background-color: 		#85C1E9;
+    color: white;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<ul ng-repeat="friend in friendslist">
+<li ng-hide="friend.from==currentUser.username">{{friend.from}}</li>
+<li ng-hide="friend.to==currentUser.username">{{friend.to}}</li>
+<td><a href="#chat" class="button">Send message</a></td>
+</ul>
+</body>
+</html>

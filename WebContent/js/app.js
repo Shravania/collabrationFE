@@ -24,6 +24,38 @@ app.config(function($routeProvider){
     	templateUrl:'_job/getjobtitles.html',
     	controller:'JobController'
     })
+    .when('/addPost',{
+    	templateUrl:'_blog/blogForm.html',
+    	controller:'BlogController'
+    })
+    .when('/getAllBlogs',{
+    	templateUrl:'_blog/getBlogTitles.html',
+    	controller:'BlogController'
+    })
+    .when('/getBlogDetail/:id',{
+    	templateUrl:'_blog/getBlogDetails.html',
+    	controller:'BlogDetailController'
+    })
+    .when('/getBlogForApproval/:id',{
+    	templateUrl:'_blog/getBlogForApproval.html',
+    	controller:'BlogDetailController'
+    })
+    .when('/friendslist',{
+    	templateUrl:'_friend/friendlist.html',
+    	controller:'FriendController'
+    })
+    .when('/pendingRequests',{
+    	templateUrl:'_friend/pendingRequests.html',
+    	controller:'FriendController'
+    })
+    .when('/getAllUsers',{
+    	templateUrl:'_friend/usersList.html',
+    	controller:'FriendController'
+    })
+    .when('/chat',{
+	templateUrl : '_chat/chat.html',
+		controller : 'ChatController'	
+})
 
 })
 app.run(function($rootScope,$cookieStore,UserService,$location){

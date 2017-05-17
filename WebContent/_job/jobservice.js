@@ -4,7 +4,7 @@ app.factory('JobService',function($http){
 	var BASE_URL="http://localhost:8081/CollabrationBackEnd"
 	
 	jobService.saveJob=function(job){
-		return $http.post(BASE_URL + "/addJob",job)
+		return $http.post(BASE_URL + "/saveJob",job)
 	}
 	
 	jobService.getAllJobs=function(){

@@ -1,5 +1,6 @@
 app.controller('JobController',function($scope,$location,JobService){
 	$scope.saveJob=function(){
+	
 		JobService.saveJob($scope.job)
 		.then(function(response){
 			$location.path('/getAllJobs')
@@ -13,15 +14,15 @@ app.controller('JobController',function($scope,$location,JobService){
 		$scope.showJobDetails=false
 		JobService.getAllJobs()
 		.then(function(response){
-			$scope.job=response.data
+			$scope.jobs=response.data
 		},function(response){
-			console.log(response.status);
+			console.log(response.status)
 		})
 	}
 	
-	$scope.jobDetail=function(id){
+	$scope.jobDetail=function(jobid){
 		$scope.showJobDetails=true
-		JobService.getJobDetail(id)
+		JobService.getJobDetail(jobid)
 		.then(function(response){
 			$scope.job=response.data
 		},function(){
